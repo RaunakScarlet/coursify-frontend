@@ -39,9 +39,9 @@ const Testimonials = () => {
           <h2 className="text-3xl font-bold text-center">
               What Our Students Say
           </h2>
-          
+
           <br />
-          <div className="flex gap-4 ">
+          <div className="flex flex-wrap gap-4 ">
               {testimonialsData.map((testimonial) => (
                   <div
                       className="flex flex-col items-center justify-center border-4 border-purple-300 rounded-2xl p-8 "
