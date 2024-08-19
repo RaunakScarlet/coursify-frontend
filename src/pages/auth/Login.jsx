@@ -7,7 +7,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const { btnLoading, loginUser } = UserData();
-    
+
 
 
     const submitHandler = async (e) => {
@@ -33,6 +33,7 @@ const Login = () => {
                     className="border-2 rounded-md border-blue-100 w-full"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    required
                 />
                 <br />
 
@@ -43,6 +44,7 @@ const Login = () => {
                     className="border-2 rounded-md border-blue-100 w-full"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    required
                 />
                 <button
                     disabled={btnLoading}
