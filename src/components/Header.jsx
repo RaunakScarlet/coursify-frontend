@@ -1,6 +1,8 @@
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { UserData } from "../context/userContext";
 
 const Header = () => {
+    const { isAuth } = UserData();
     return (
         <div className="flex items-center justify-between p-3">
             <div className="text-xl md:text-3xl text-blue-500 font-bold">
@@ -40,17 +42,29 @@ const Header = () => {
                 >
                     About
                 </NavLink>
-
-                <NavLink
-                    to="/account"
-                    className={({ isActive }) =>
-                        isActive
-                            ? "text-blue-500 font-bold"
-                            : "text-gray-500 font-bold"
-                    }
-                >
-                    Account
-                </NavLink>
+                {isAuth ? (
+                    <NavLink
+                        to="/account"
+                        className={({ isActive }) =>
+                            isActive
+                                ? "text-blue-500 font-bold"
+                                : "text-gray-500 font-bold"
+                        }
+                    >
+                        Account
+                    </NavLink>
+                ) : (
+                    <NavLink
+                        to="/login"
+                        className={({ isActive }) =>
+                            isActive
+                                ? "text-blue-500 font-bold"
+                                : "text-gray-500 font-bold"
+                        }
+                    >
+                        Login
+                    </NavLink>
+                )}
             </div>
         </div>
     );

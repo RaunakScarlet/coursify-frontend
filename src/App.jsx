@@ -7,22 +7,45 @@ import Register from './pages/auth/Register';
 import Verify from './pages/auth/Verify';
 import About from './pages/About';
 import Footer from './components/Footer';
+import Account from './pages/Account';
+import Courses from './pages/Courses';
+import { UserData } from './context/userContext';
+import Loading from './components/Loading';
 function App() {
+    
+    const { isAuth, loading } = UserData();
+    
     return (
         <>
-            <BrowserRouter>
-                <Header />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/verify" element={<Verify />} />
-                    <Route path="/account" element={<Login />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/courses" element={<Verify />} />
-                </Routes>
-            <Footer/>
-            </BrowserRouter>
+            {loading ? (
+                <Loading />
+            ) : (
+                <BrowserRouter>
+                    <Header isAuth={isAuth} />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route
+                            path="/login"
+                            element={isAuth ? <Home /> : <Login />}
+                        />
+                        <Route
+                            path="/register"
+                            element={isAuth ? <Home /> : <Register />}
+                        />
+                        <Route
+                            path="/verify"
+                            element={isAuth ? <Home /> : <Verify />}
+                        />
+                        <Route
+                            path="/account"
+                            element={isAuth ? <Account /> : <Login />}
+                        />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/courses" element={<Courses />} />
+                    </Routes>
+                    <Footer />
+                </BrowserRouter>
+            )}
         </>
     );
 }

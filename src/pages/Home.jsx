@@ -3,7 +3,8 @@ import Testimonials from "../components/Testimonials";
 
 const Home = () => {
     return (
-        <div className=" w-full flex justify-center items-center">
+        
+        <div className=" w-full flex justify-center items-center h-[135vh]">
             <div className="flex-col justify-center items-center">
                 <h1 className="text-3xl text-bold  py-12 px-8 text-center">
                     Welcome to our{" "}

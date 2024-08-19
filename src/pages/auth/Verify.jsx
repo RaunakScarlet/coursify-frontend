@@ -32,6 +32,7 @@ const Verify = () => {
             </form>
         </div>
     );
+    
 };
 
 export default Verify;

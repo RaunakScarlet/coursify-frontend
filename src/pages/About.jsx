@@ -3,7 +3,8 @@
 
 const About = () => {
     return (
-        <div className="h-screen mt-24 mx-auto w-1/2">
+        
+        <div className="h-[65vh] mt-24 mx-auto w-1/2">
             <div className="about-content">
                 <h2 className="text-3xl font-bold"> About Us</h2>
                 <p className=" mt-12">

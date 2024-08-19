@@ -8,10 +8,11 @@ import {
 const Footer = () => {
     return (
         <footer>
-            <div className="flex flex-col justify-center items-center bg-purple-200 mt-8 p-4 ">
+            
+            <div className="flex flex-col justify-center items-center bg-purple-200 mt-8 p-4 text-center">
                 <p>
                     &copy; 2024 Your Coursify Platform. All rights reserved.{" "}
-                    <br />
+                   
                 </p>
                 <p>
                     {" "}

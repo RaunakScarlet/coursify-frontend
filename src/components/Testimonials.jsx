@@ -39,6 +39,7 @@ const Testimonials = () => {
           <h2 className="text-3xl font-bold text-center">
               What Our Students Say
           </h2>
+          
           <br />
           <div className="flex gap-4 ">
               {testimonialsData.map((testimonial) => (
